@@ -1,0 +1,14 @@
+// COLORS
+// ========================================
+
+@each $color-name, $hex in $colors {
+
+  %background-#{$color-name} {
+    background-color: $hex;
+  }
+
+  %color-#{$color-name} {
+    color: $hex;
+  }
+
+}

@@ -1,0 +1,13 @@
+%text-center {
+  text-align: center
+}
+
+%text-decoration-none {
+  text-decoration: none
+}
+
+@each $line-height, $i in $baselines {
+  %line-height-#{$line-height} {
+    line-height: $i;
+  }
+}

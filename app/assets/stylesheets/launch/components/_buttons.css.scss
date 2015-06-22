@@ -1,0 +1,50 @@
+// BASE
+
+%button-base {
+  @extend %text-center;
+  @extend %border-solid;
+  @extend %border-1;
+  border-color: transparent;
+  border-radius: $default-button-radius;
+  @extend %color-white;
+  @extend %cursor-pointer;
+  @extend .display-inline-block;
+  @extend %line-height-base;
+  @extend %text-center;
+  @extend %text-decoration-none;
+  @extend %vertical-align-middle;
+  white-space: nowrap;
+  padding: $default-button-padding;
+}
+
+
+// COLORS AND STATES
+
+@each $button-name, $states in $button-colors {
+
+  .button-#{$button-name} {
+    // .button-success, .button-warning, etc.
+    @extend %button-base;
+
+    @each $state, $properties in $states {
+      @if $state == 'normal' {
+        // all states
+        @include button-state-properties($properties);
+      } @else {
+        &:#{$state} {
+          // active or hover states
+          @include button-state-properties($properties);
+        }
+      }
+    }
+
+  }
+}
+
+// SIZES
+
+@each $button-size, $size-properties in $button-sizes {
+  .button-#{$button-size} {
+    @include button-size-properties($size-properties)
+  }
+}

@@ -1,0 +1,39 @@
+// Alerts Component
+// ========================================
+
+@each $alert in $alerts {
+  $name:     nth($alert, 1);
+  $color-1:  nth($alert, 2);
+  $color-2:  nth($alert, 3);
+
+  .alert--#{$name} {
+    @include position(relative);
+    @include rem(margin, 0 auto 15px);
+    @include rem(padding, 10px);
+    background: lighten($color-1, 10%);
+    border: 1px solid $color-2;
+    color: $color-2;
+    display: inline-block;
+    max-width: 23em;
+    text-align: center;
+    width: 100%;
+    z-index: 9999;
+
+    @include media($tablet) { max-width: 68em; }
+
+    #app-icon{ fill: $color-2; }
+  }
+
+  .alert--content {
+    @include font-type($primary-sans-serif, normal, 700);
+    margin: 0;
+  }
+
+  .alert--close-icon {
+    @include position(absolute, 5px 5px null null);
+  }
+
+  .alert__banner {
+    @include position(absolute, 10px 0 null 0);
+  }
+};

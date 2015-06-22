@@ -1,15 +1,5 @@
-// VARIABLES
-@import 'variables/colors';
-@import 'variables/buttons';
-@import 'variables/misc';
-@import 'variables/layout';
-
 // EXTENDS
-@import 'extends/colors';
-@import 'extends/layout';
-@import 'extends/typography';
-@import 'extends/misc';
+@import 'extends/base';
 
 // MIXINS
-@import 'mixins/misc';
-@import 'mixins/buttons';
+@import 'mixins/base';

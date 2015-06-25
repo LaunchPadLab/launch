@@ -48,33 +48,6 @@ Launch is a repository of frontend components that are extendable and customizab
 
 ```
 
-**Card with header, body, and footer**
-
-```html
-<%= content_for :my_card_body do %>
-  <p>This is the body of the card</p>
-  <div>
-    <p>I can put as much information</div>
-    <p>in the body of this card as I want</p>
-  </p>
-<% end %>
-
-<%= content_for :my_card_footer do %>
-  <p>This is the footer of the card</p>
-<% end %>
-
-<%= launch_component(:card, {
-  add_class: "card__is-hidden", # hides card on mobile
-  header: {
-    title: "My great card"
-  },
-  body: {
-    content: yield(:my_card_body),
-    footer: yield(:my_card_footer)
-}) %>
-
-```
-
 **Card with only body**
 
 ```html

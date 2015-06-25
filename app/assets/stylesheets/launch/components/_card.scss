@@ -1,0 +1,93 @@
+// Card Component
+// ========================================
+
+
+// Card Variables
+$card-background-color: $white-base;
+$card-border:           1px solid $grey-light;
+$card-border-radius:    2px;
+$card-margin:           30px 0;
+$card-padding:          20px;
+$card-shadow-color:     rgba(0, 0, 0, 0.15);
+$card-shadow-spread:    0 0 10px;
+
+$card-header-yellow:    $yellow-base;
+
+$card-footer-margin:    15px;
+$card-footer-padding:   25px;
+
+
+// Card Structure
+.card {
+  @include box-shadow($card-shadow-spread, $card-shadow-color);
+  @include position(relative);
+  @include rem(margin, $card-margin);
+  @include transition(all 0.2s ease-in-out);
+  background: $card-background-color;
+  border-radius: $card-border-radius;
+}
+
+
+// Card Header
+.card--header {
+  @include rem(padding, $card-padding $card-padding ($card-padding/2));
+  text-align: center;
+
+  &.yellow{ background-color: $card-header-yellow; }
+
+  img { width: 60%; }
+}
+
+.card--title {
+  @include font-type($secondary-sans-serif, normal, 300);
+  @include rem(padding-bottom, 15px);
+  @include s-bravo;
+  border-bottom: $card-border;
+  margin-bottom: 0;
+  text-align: left;
+}
+
+.card--title__right {
+  @include font-type($primary-sans-serif, normal, 700);
+  @include s-charlie;
+  float: right;
+}
+
+// Card Body
+.card--body {
+  @include rem(padding, $card-padding);
+}
+
+
+// Card Footer
+.card--footer {
+  @include rem(margin-top, $card-footer-margin);
+  @include rem(padding-top, $card-footer-padding);
+  border-top: $card-border;
+  text-align: center;
+
+  li{
+    @include s-hotel;
+    @include rem(margin-right, 15px);
+    color: $grey-dark;
+    display: inline-block;
+
+    &:last-child { margin-right: 0; }
+  }
+}
+
+
+// Card Visiability
+.card.card__is-hidden {
+  display: none;
+  @include media($tablet-landscape) { display: block; }
+}
+
+.card.card__is-active {
+  @include animation(fade-in-down 0.3s linear);
+  @include box-shadow(0 0 0, transparent);
+  @include position(relative, 5px null null null);
+  display: block;
+  border: 1px solid $grey-light;
+  border-radius: 0;
+}

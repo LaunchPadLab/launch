@@ -19,7 +19,27 @@ Launch is a repository of frontend components that are extendable and customizab
     - Content
     - Footer (optional)
 
-### Implementation Examples
+### Implementation
+
+```sass
+// Card Variables
+// customize these based on app needs
+$card-background-color: $white-base;
+$card-border:           1px solid $grey-light;
+$card-border-radius:    2px;
+$card-margin:           30px 0;
+$card-padding:          20px;
+$card-shadow-color:     rgba(0, 0, 0, 0.15);
+$card-shadow-spread:    0 0 10px;
+
+$card-header-yellow:    $yellow-base;
+
+$card-footer-margin:    15px;
+$card-footer-padding:   25px;
+
+// Import Card Component Sass
+@import "launch/components/card"
+```
 
 **Card with header, body, and footer**
 

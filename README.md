@@ -44,6 +44,7 @@ Launch is a repository of frontend components that are extendable and customizab
   body: {
     content: yield(:my_card_body),
     footer: yield(:my_card_footer)
+  }
 }) %>
 
 ```
@@ -75,4 +76,40 @@ Launch is a repository of frontend components that are extendable and customizab
   body: yield(:my_card_body)
 }) %>
 
+```
+
+
+## Alert
+
+<img src="http://cl.ly/image/27303h403i12/Screenshot%202015-06-24%2019.11.00.png" width="200" alt="Alert" />
+
+
+### Structure
+
+- Alert
+  - Message (success, warning, or info)
+
+### Implementation
+
+
+**Banner Alert: pushes content down**
+
+```erb
+<!-- Error message -->
+<%= launch_component("alert/banner", warning_message: "My message which is a bad thing" %>
+
+<!-- Success message -->
+<%= launch_component("alert/banner", success_message: "My message which is a good thing" %>
+
+<!-- Info message -->
+<%= launch_component("alert/banner", info_message: "My message which is a neither good nor bad" %>
+
+<!-- Catch all using Rails alert and notice helpers -->
+<%= launch_component("alert/banner", warning_message: alert, success_message: notice %>
+```
+
+**Standard Alert: overlays on top of content**
+
+```erb
+<%= launch_component(:alert, warning_message: "My message") %>
 ```

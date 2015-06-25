@@ -23,7 +23,7 @@ Launch is a repository of frontend components that are extendable and customizab
 
 **Card with header, body, and footer**
 
-```html
+```erb
 <%= content_for :my_card_body do %>
   <p>This is the body of the card</p>
   <div>
@@ -50,7 +50,7 @@ Launch is a repository of frontend components that are extendable and customizab
 
 **Card with only body**
 
-```html
+```erb
 <%= content_for :my_card_body do %>
   <p>This is the body of the card</p>
 <% end %>
@@ -63,7 +63,7 @@ Launch is a repository of frontend components that are extendable and customizab
 
 **Card with image in header**
 
-```html
+```erb
 <%= content_for :my_card_body do %>
   <p>This is the body of the card</p>
 <% end %>

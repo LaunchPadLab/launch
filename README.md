@@ -23,7 +23,8 @@ Launch is a repository of frontend components that are extendable and customizab
 
 ```sass
 // Card Variables
-// customize these based on app needs
+// customize these for your app
+
 $card-background-color: $white-base;
 $card-border:           1px solid $grey-light;
 $card-border-radius:    2px;
@@ -37,7 +38,6 @@ $card-header-yellow:    $yellow-base;
 $card-footer-margin:    15px;
 $card-footer-padding:   25px;
 
-// Import Card Component Sass
 @import "launch/components/card"
 ```
 
@@ -111,6 +111,19 @@ $card-footer-padding:   25px;
 
 ### Implementation
 
+```sass
+// Alert Variables
+// customize these for your app
+
+$alerts: (
+  success   $green-base   $green-dark,
+  danger    $yellow-base  $yellow-dark,
+  warning   $red-base     $red-dark,
+  default   $blue-base    $blue-dark
+);
+
+@import "launch/components/alert"
+```
 
 **Banner Alert: pushes content down**
 

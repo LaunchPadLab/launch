@@ -150,16 +150,16 @@ $alerts: (
 
 ```erb
 <!-- Error message -->
-<%= launch_component("alert/banner", warning_message: "My message which is a bad thing" %>
+<%= launch_component("alert/banner", warning_message: "My message which is a bad thing") %>
 
 <!-- Success message -->
-<%= launch_component("alert/banner", success_message: "My message which is a good thing" %>
+<%= launch_component("alert/banner", success_message: "My message which is a good thing") %>
 
 <!-- Info message -->
-<%= launch_component("alert/banner", info_message: "My message which is a neither good nor bad" %>
+<%= launch_component("alert/banner", info_message: "My message which is a neither good nor bad") %>
 
 <!-- Catch all using Rails alert and notice helpers -->
-<%= launch_component("alert/banner", warning_message: alert, success_message: notice %>
+<%= launch_component("alert/banner", warning_message: alert, success_message: notice) %>
 ```
 
 **Standard Alert: overlays on top of content**

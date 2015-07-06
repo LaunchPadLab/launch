@@ -46,12 +46,12 @@ $card-settings: (
 ```
 
 ```sass
-<!-- app/assets/stylesheets/settings/settings.scss -->
+// app/assets/stylesheets/settings/settings.scss
 @import 'components/card';
 ```
 
 ```sass
-<!-- app/assets/stylesheets/application.scss -->
+// app/assets/stylesheets/application.scss
 @import "launch/components/card";
 ```
 
@@ -158,12 +158,12 @@ $alerts: (
 ```
 
 ```sass
-<!-- app/assets/stylesheets/settings/settings.scss -->
+// app/assets/stylesheets/settings/settings.scss
 @import 'components/alerts';
 ```
 
 ```sass
-<!-- app/assets/stylesheets/application.scss -->
+// app/assets/stylesheets/application.scss
 @import "launch/components/alerts";
 ```
 

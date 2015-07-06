@@ -1,0 +1,4 @@
+<ul class="tabs--menu">
+  <li class="tabs--link <%= 'is-active' unless @user_errors %>"><%= link_to 'Truck Profile', '#truck' %></li>
+  <li class="tabs--link <%= 'is-active' if @user_errors %>"><%= link_to 'User Profile', '#user' %></li>
+</ul>

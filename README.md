@@ -144,6 +144,8 @@ $card-settings: (
 ### Implementation
 
 ```sass
+// app/assets/stylesheets/settings/components/_alerts.scss
+
 // Alert Variables
 // customize these for your app
 
@@ -199,6 +201,8 @@ $alerts: (
 <img src="http://cl.ly/image/3o4609322q13/Screenshot%202015-07-06%2010.48.35.png" width="400" alt="Simple Tabs" />
 
 ```sass
+// app/assets/stylesheets/settings/components/_tabs.scss
+
 // Tabs Component
 // ========================================
 

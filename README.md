@@ -44,7 +44,7 @@ $card-settings: (
 
 ```
 
-**Using Plain HTML*
+**HTML**
 
 ```html
 <div class="card">
@@ -60,7 +60,7 @@ $card-settings: (
 </div>
 ```
 
-**Using Launch Component Generator**
+### Launch Component Generator
 
 **Card with header, body, and footer**
 

@@ -219,12 +219,12 @@ $tabs-settings: (
 ```
 
 ```sass
-<!-- app/assets/stylesheets/settings/settings.scss -->
+// app/assets/stylesheets/settings/settings.scss
 @import 'components/tabs';
 ```
 
 ```sass
-<!-- app/assets/stylesheets/application.scss -->
+// app/assets/stylesheets/application.scss
 @import "launch/components/tabs";
 ```
 

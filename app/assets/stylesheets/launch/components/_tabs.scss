@@ -1,0 +1,26 @@
+// Tabs Component
+// ========================================
+
+$tabs-link-font-type: map-deep-get($tabs-settings, link-font-settings, type);
+$tabs-link-font-style: map-deep-get($tabs-settings, link-font-settings, style);
+$tabs-link-font-weight: map-deep-get($tabs-settings, link-font-settings, weight);
+
+// Structure
+.tabs--link {
+  @include rem(margin-right, tab-link-margin);
+  display: inline-block;
+
+  @if $tabs-link-font-type {
+    @include font-type($tabs-link-font-type, $tabs-link-font-style, $tabs-link-font-weight);
+  }
+
+  &.is-active {
+    border-bottom: map-get($tabs-settings, link-active-border);
+    margin-bottom: map-get($tabs-settings, link-active-offset);
+  }
+}
+
+.tabs--content {
+  display: none;
+  &.is-active { display: block; }
+}

@@ -46,7 +46,7 @@ $card-settings: (
 
 **Using Plain HTML*
 
-```
+```html
 <div class="card">
   <header role="banner" class="card--header color--primary">
     <h2>Header area</h2>

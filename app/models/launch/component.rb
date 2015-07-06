@@ -39,6 +39,7 @@ class Launch::Component
 
     def parse_hash
       @content = args[:content]
+      @content = @content.join("") if @content.is_a?(Array)
       @add_class = args[:add_class]
       @tag = args[:tag]
     end

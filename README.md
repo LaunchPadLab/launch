@@ -21,25 +21,46 @@ Launch is a repository of frontend components that are extendable and customizab
 
 ### Implementation
 
+**SASS**
+
 ```sass
 // Card Variables
 // customize these for your app
 
-$card-background-color: $white-base;
-$card-border:           1px solid $grey-light;
-$card-border-radius:    2px;
-$card-margin:           30px 0;
-$card-padding:          20px;
-$card-shadow-color:     rgba(0, 0, 0, 0.15);
-$card-shadow-spread:    0 0 10px;
+$card-settings: (
+  background-color: $white-base,
+  border: 1px solid $grey-light,
+  border-radius: 2px,
+  margin: 30px 0,
+  padding: 20px,
+  shadow-color: rgba(0, 0, 0, 0.15),
+  shadow-spread: 0 0 10px,
+  header-background-colors: (
+    primary: $yellow-base
+  ),
+  footer-margin: 15px,
+  footer-padding: 25px
+);
 
-$card-header-yellow:    $yellow-base;
-
-$card-footer-margin:    15px;
-$card-footer-padding:   25px;
-
-@import "launch/components/card"
 ```
+
+**Using Plain HTML*
+
+```
+<div class="card">
+  <header role="banner" class="card--header color--primary">
+    <h2>Header area</h2>
+  </header>
+  <div class="card--body">
+    <p>The Earth was small, light blue, and so touchingly alone, our home that must be defended like a holy relic. The Earth was absolutely round. I believe I never knew what the word round meant until I saw Earth from space.</p>
+    <footer role="contentinfo" class="card--footer">
+      <p>Some footer content...</p>
+    </footer>
+  </div>
+</div>
+```
+
+**Using Launch Component Generator**
 
 **Card with header, body, and footer**
 

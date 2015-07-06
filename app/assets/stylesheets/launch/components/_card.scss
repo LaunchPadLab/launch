@@ -1,30 +1,37 @@
 // Card Component
 // ========================================
 
+// App Variables
+  // $card-settings: (
+  //   background-color: $white-base,
+  //   border: 1px solid $grey-light,
+  //   border-radius: 2px,
+  //   margin: 30px 0,
+  //   padding: 20px,
+  //   shadow-color: rgba(0, 0, 0, 0.15),
+  //   shadow-spread: 0 0 10px,
+  //   header-background-colors: (
+  //     primary: $yellow-base
+  //   ),
+  //   footer-margin: 15px,
+  //   footer-padding: 25px
+  // );
 
-// Card Variables
-$card-background-color: $white-base;
-$card-border:           1px solid $grey-light;
-$card-border-radius:    2px;
-$card-margin:           30px 0;
-$card-padding:          20px;
-$card-shadow-color:     rgba(0, 0, 0, 0.15);
-$card-shadow-spread:    0 0 10px;
-
-$card-header-yellow:    $yellow-base;
-
-$card-footer-margin:    15px;
-$card-footer-padding:   25px;
-
+$card-shadow-spread: map-get($card-settings, shadow-spread);
+$card-padding: map-get($card-settings, padding);
+$card-border: map-get($card-settings, border);
 
 // Card Structure
 .card {
-  @include box-shadow($card-shadow-spread, $card-shadow-color);
   @include position(relative);
-  @include rem(margin, $card-margin);
+  @include rem(margin, map-get($card-settings, margin));
   @include transition(all 0.2s ease-in-out);
-  background: $card-background-color;
-  border-radius: $card-border-radius;
+  background: map-get($card-settings, background-color);
+  border-radius: map-get($card-settings, border-radius);
+
+  @if $card-shadow-spread {
+    @include box-shadow($card-shadow-spread, map-get($card-settings, shadow-color));
+  }
 }
 
 
@@ -33,23 +40,23 @@ $card-footer-padding:   25px;
   @include rem(padding, $card-padding $card-padding ($card-padding/2));
   text-align: center;
 
-  &.yellow{ background-color: $card-header-yellow; }
+  @each $color-name, $color-value in map-get($card-settings, header-background-colors) {
+    &.color--#{$color-name} {
+      background-color: $color-value;
+    }
+  }
 
   img { width: 60%; }
 }
 
 .card--title {
-  @include font-type($secondary-sans-serif, normal, 300);
   @include rem(padding-bottom, 15px);
-  @include s-bravo;
   border-bottom: $card-border;
   margin-bottom: 0;
   text-align: left;
 }
 
 .card--title__right {
-  @include font-type($primary-sans-serif, normal, 700);
-  @include s-charlie;
   float: right;
 }
 
@@ -61,15 +68,13 @@ $card-footer-padding:   25px;
 
 // Card Footer
 .card--footer {
-  @include rem(margin-top, $card-footer-margin);
-  @include rem(padding-top, $card-footer-padding);
+  @include rem(margin-top, map-get($card-settings, footer-margin));
+  @include rem(padding-top, map-get($card-settings, footer-padding));
   border-top: $card-border;
   text-align: center;
 
-  li{
-    @include s-hotel;
+  li {
     @include rem(margin-right, 15px);
-    color: $grey-dark;
     display: inline-block;
 
     &:last-child { margin-right: 0; }

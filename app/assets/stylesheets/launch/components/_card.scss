@@ -1,0 +1,98 @@
+// Card Component
+// ========================================
+
+// App Variables
+  // $card-settings: (
+  //   background-color: $white-base,
+  //   border: 1px solid $grey-light,
+  //   border-radius: 2px,
+  //   margin: 30px 0,
+  //   padding: 20px,
+  //   shadow-color: rgba(0, 0, 0, 0.15),
+  //   shadow-spread: 0 0 10px,
+  //   header-background-colors: (
+  //     primary: $yellow-base
+  //   ),
+  //   footer-margin: 15px,
+  //   footer-padding: 25px
+  // );
+
+$card-shadow-spread: map-get($card-settings, shadow-spread);
+$card-padding: map-get($card-settings, padding);
+$card-border: map-get($card-settings, border);
+
+// Card Structure
+.card {
+  @include position(relative);
+  @include rem(margin, map-get($card-settings, margin));
+  @include transition(all 0.2s ease-in-out);
+  background: map-get($card-settings, background-color);
+  border-radius: map-get($card-settings, border-radius);
+
+  @if $card-shadow-spread {
+    @include box-shadow($card-shadow-spread, map-get($card-settings, shadow-color));
+  }
+}
+
+
+// Card Header
+.card--header {
+  @include rem(padding, $card-padding $card-padding ($card-padding/2));
+  text-align: center;
+
+  @each $color-name, $color-value in map-get($card-settings, header-background-colors) {
+    &.color--#{$color-name} {
+      background-color: $color-value;
+    }
+  }
+
+  img { width: 60%; }
+}
+
+.card--title {
+  @include rem(padding-bottom, 15px);
+  border-bottom: $card-border;
+  margin-bottom: 0;
+  text-align: left;
+}
+
+.card--title__right {
+  float: right;
+}
+
+// Card Body
+.card--body {
+  @include rem(padding, $card-padding);
+}
+
+
+// Card Footer
+.card--footer {
+  @include rem(margin-top, map-get($card-settings, footer-margin));
+  @include rem(padding-top, map-get($card-settings, footer-padding));
+  border-top: $card-border;
+  text-align: center;
+
+  li {
+    @include rem(margin-right, 15px);
+    display: inline-block;
+
+    &:last-child { margin-right: 0; }
+  }
+}
+
+
+// Card Visiability
+.card.card__is-hidden {
+  display: none;
+  @include media($tablet-landscape) { display: block; }
+}
+
+.card.card__is-active {
+  @include animation(fade-in-down 0.3s linear);
+  @include box-shadow(0 0 0, transparent);
+  @include position(relative, 5px null null null);
+  display: block;
+  border: 1px solid $grey-light;
+  border-radius: 0;
+}

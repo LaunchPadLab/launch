@@ -41,7 +41,16 @@ $card-settings: (
   footer-margin: 15px,
   footer-padding: 25px
 );
+```
 
+```sass
+<!-- app/assets/stylesheets/settings/settings.scss -->
+@import 'components/card';
+```
+
+```sass
+<!-- app/assets/stylesheets/application.scss -->
+@import "launch/components/card";
 ```
 
 **HTML**
@@ -142,9 +151,24 @@ $alerts: (
   warning   $red-base     $red-dark,
   default   $blue-base    $blue-dark
 );
-
-@import "launch/components/alert"
 ```
+
+```sass
+<!-- app/assets/stylesheets/settings/settings.scss -->
+@import 'components/alerts';
+```
+
+```sass
+<!-- app/assets/stylesheets/application.scss -->
+@import "launch/components/alerts";
+```
+
+```js
+// application.js
+
+//= require launch/components/_alerts
+```
+
 
 **Banner Alert: pushes content down**
 
@@ -167,3 +191,53 @@ $alerts: (
 ```erb
 <%= launch_component(:alert, warning_message: "My message") %>
 ```
+
+## Tabs
+
+<img src="http://cl.ly/image/3o4609322q13/Screenshot%202015-07-06%2010.48.35.png" width="400" alt="Simple Tabs" />
+
+```sass
+// Tabs Component
+// ========================================
+
+$tabs-settings: (
+  link-active-border: 5px solid $yellow-base,
+  link-active-offset: -1px,
+  link-margin: 20px,
+  link-font-settings: (
+    type: $secondary-sans-serif,
+    style: normal,
+    weight: 700
+  )
+)
+```
+
+```sass
+<!-- app/assets/stylesheets/settings/settings.scss -->
+@import 'components/tabs';
+```
+
+```sass
+<!-- app/assets/stylesheets/application.scss -->
+@import "launch/components/tabs";
+```
+
+```js
+// application.js
+
+//= require launch/components/_tabs
+```
+
+```html
+<ul class="tabs--menu">
+  <li class="tabs--link is-active"><%= link_to 'Truck Profile', '#truck' %></li>
+  <li class="tabs--link"><%= link_to 'User Profile', '#user' %></li>
+</ul>
+<div id="truck" class="tabs--content is-active">
+  <p>Content for truck</p>
+</div>
+<div id="user" class="tabs--content">
+  <p>Content for user</p>
+</div>
+```
+

@@ -24,6 +24,8 @@ Launch is a repository of frontend components that are extendable and customizab
 **SASS**
 
 ```sass
+// app/assets/stylesheets/settings/components/_card.scss
+
 // Card Variables
 // customize these for your app
 

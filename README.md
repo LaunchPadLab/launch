@@ -247,3 +247,64 @@ $tabs-settings: (
 </div>
 ```
 
+## Modal
+
+<img src="http://cl.ly/image/0E1A2U2P2o0N/Screenshot%202015-07-07%2019.03.18.png" width="400" alt="Modal" />
+
+### Implementation
+
+```sass
+// app/assets/stylesheets/settings/components/_modal.scss
+
+// Modal Component
+// ========================================
+
+$modal-settings: (
+  background: $white-base,
+  border-radius: 2px,
+  padding: 15px
+)
+```
+
+```sass
+// app/assets/stylesheets/settings/settings.scss
+@import 'components/modal';
+```
+
+```sass
+// app/assets/stylesheets/application.scss
+@import "launch/components/modal";
+```
+
+```js
+// application.js
+
+//= require launch/components/_modal
+```
+
+```html
+<div class="modal">
+  <label for="modal-1">
+    <div class="modal-trigger">Click for Modal</div>
+  </label>
+  <input class="modal-state" id="modal-1" type="checkbox" />
+  <div class="modal-window">
+    <div class="modal-container">
+      <header class="modal-header">
+        <h4 class="modal-header-title">Some title...</h4>
+      </header>
+      <div class="modal-inner">
+        <div class="modal-body center">
+          <p class="modal-body--tag">Modal body tag</p>
+          <h3 class="modal-body--title">Modal body title...</h3>
+          <p>Do you want to save your load estimate?  <br>Create an account for free today.</p><br>
+          <%= link_to 'Sign Up', '#' %>
+        </div>
+      </div>
+      <footer class="modal-footer">
+        <%= link_to 'Cancel', '#', class: 'modal-close' %>
+      </footer>
+    </div>
+  </div>
+</div>
+```

@@ -1,3 +1,16 @@
+// Modal Component
+// ========================================
+
+// $modal-settings: (
+//   background:    $white-base,
+//   border-radius: 2px,
+//   padding:       15px
+// )
+
+$modal-background: map-get($modal-settings, background);
+$modal-padding: map-get($modal-settings, padding);
+$modal-border-radius: map-get($modal-settings, border-radius);
+
 // Stucture
 .modal {
 

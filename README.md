@@ -2,6 +2,26 @@
 
 Launch is a repository of frontend components that are extendable and customizable. Each component includes necessary sass and javascript and offer an html generator for consistent, centralized generation of the component.
 
+# Installation
+
+Gemfile:
+
+```ruby
+gem "launch"
+```
+
+Terminal:
+
+```
+bundle
+```
+
+With Launch, there is no need manually add mixins for typography, rem, misc, and buttons. At the bottom of app/assets/stylesheets/settings/settings.scss, simply add:
+
+```sass
+@import "launch/settings/mixins/base";
+```
+
 # Components
 
 ## Card
@@ -308,3 +328,6 @@ $modal-settings: (
   </div>
 </div>
 ```
+
+## Buttons
+

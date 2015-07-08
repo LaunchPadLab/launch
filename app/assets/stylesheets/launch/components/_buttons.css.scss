@@ -29,15 +29,17 @@ $default-button-border-radius: 2px !default;
   }
 }
 
-.link__underline{
+.link__underline {
   text-decoration: underline;
   &:hover{ text-decoration: underline; }
 }
 
-.button__long{ @include rem(padding, 10px 40px); }
+.button__long {
+  @include rem(padding, 10px 40px);
+}
 
 // Button List Styles
-.button-list{
+.button-list {
   @include span-columns(12 of 12);
   text-align: center;
 

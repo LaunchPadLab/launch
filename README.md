@@ -16,10 +16,10 @@ Terminal:
 bundle
 ```
 
-With Launch, there is no need manually add mixins for typography, rem, misc, and buttons. At the bottom of app/assets/stylesheets/settings/settings.scss, simply add:
+With Launch, there is no need to manually add standard settings like mixins and the reset file. At the bottom of app/assets/stylesheets/settings/settings.scss, simply add:
 
 ```sass
-@import "launch/settings/mixins/base";
+@import "launch/settings/base";
 ```
 
 # Components

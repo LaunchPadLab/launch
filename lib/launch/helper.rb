@@ -11,7 +11,10 @@ module Launch
     end
 
     def embedded_svg filename, options={}
-      file = File.read(Launch::Engine.root.join('app', 'assets', 'images', filename))
+      app_path = Rails.root.join('app', 'assets', 'images', filename)
+      launch_path = Launch::Engine.root.join('app', 'assets', 'images', filename)
+      path = File.exist?(app_path) ? app_path : launch_path
+      file = File.read(path)
       doc = Nokogiri::HTML::DocumentFragment.parse file
       svg = doc.at_css 'svg'
       if options[:class].present?

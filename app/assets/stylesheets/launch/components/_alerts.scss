@@ -1,18 +1,17 @@
 // Alerts Component
 // ========================================
 
-@each $alert in $alerts {
-  $name:     nth($alert, 1);
-  $color-1:  nth($alert, 2);
-  $color-2:  nth($alert, 3);
+@each $alert-name, $alert-settings in $alerts {
+  $alert-background-color:  map-get($alert-settings, background-color);
+  $alert-color:  map-get($alert-settings, color);
 
-  .alert--#{$name} {
+  .alert--#{$alert-name} {
     @include position(relative);
     @include rem(margin, 0 auto 15px);
     @include rem(padding, 10px);
-    background: lighten($color-1, 10%);
-    border: 1px solid $color-2;
-    color: $color-2;
+    background: lighten($alert-background-color, 10%);
+    border: 1px solid $alert-color;
+    color: $alert-color;
     display: inline-block;
     max-width: 23em;
     text-align: center;
@@ -21,7 +20,7 @@
 
     @include media($tablet) { max-width: 68em; }
 
-    #app-icon{ fill: $color-2; }
+    #app-icon{ fill: $alert-color; }
   }
 
   .alert--content {

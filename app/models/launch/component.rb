@@ -1,6 +1,6 @@
 class Launch::Component
   include ActionView::Helpers
-  include ApplicationHelper
+  include ::ApplicationHelper
   include ActionView::Context
 
   attr_reader :add_class, :content, :args, :tag

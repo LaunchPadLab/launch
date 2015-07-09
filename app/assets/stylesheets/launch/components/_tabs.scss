@@ -7,7 +7,7 @@ $tabs-link-font-weight: map-deep-get($tabs-settings, link-font-settings, weight)
 
 // Structure
 .tabs--link {
-  @include rem(margin-right, tab-link-margin);
+  @include rem(margin-right, map-get($tabs-settings, link-margin));
   display: inline-block;
 
   @if $tabs-link-font-type {

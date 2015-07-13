@@ -40,7 +40,7 @@ class Launch::Component::Alert < Launch::Component
 
     def dismiss_html
       link_to '#', class: "alert--trigger" do
-        h.embedded_svg 'icons/alert-icon.svg', class: 'alert--close-icon'
+        h.embedded_svg 'launch/icons/alert-icon.svg', class: 'alert--close-icon'
       end
     end
 

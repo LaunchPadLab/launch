@@ -1,0 +1,47 @@
+//TOPBAR
+
+// $topbar-settings: (
+//   background-color: $white-base,
+//   border: 1px solid $grey-light,
+//   height: 120px
+// );
+
+$topbar-gutter: map-get($topbar-settings, gutter);
+$topbar-height: map-get($topbar-settings, height);
+
+.topbar {
+  @include rem(padding, 10% $topbar-gutter);
+  @include position(relative);
+  @include rem(height, $topbar-height);
+  background-color: map-get($topbar-settings, background-color);
+  z-index: 100;
+  text-align: center;
+
+  @include media($tablet) {
+    overflow: hidden;
+  }
+
+  .topbar--left, .topbar--middle {
+    @include media($tablet) { float: left; }
+  }
+
+  .topbar--right {
+    display: none;
+
+    @include media($tablet) {
+      float: right;
+      padding: 0;
+      display: block;
+    }
+  }
+
+  .topbar--left {
+    @include media($tablet) {
+      @include rem(height, $topbar-height);
+    }
+  }
+
+  li {
+    display: inline-block;
+  }
+}

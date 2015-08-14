@@ -9,9 +9,16 @@ class Launch::Component
     @args = args
     parse_incoming_data
     set_optional_attributes
+    set_required_attributes
     set_nested_components
     @tag ||= default_tag
     after_init
+  end
+
+  def html
+    content_tag tag, class: css_class do
+      nested_content
+    end
   end
 
   private
@@ -58,9 +65,22 @@ class Launch::Component
 
     def set_optional_attributes
       optional_attributes.each do |attr|
-        self.class.__send__(:attr_accessor, attr)
-        instance_variable_set("@#{attr.to_s}", args.is_a?(Hash) ? args[attr] : nil)
+        value = args.is_a?(Hash) ? args[attr] : nil
+        set_attr(attr, value)
       end
+    end
+
+    def set_required_attributes
+      required_attributes.each do |attr|
+        value = args.is_a?(Hash) ? args[attr] : nil
+        raise "The :#{attr} option is required for #{component_name} component. Pass with: <%= launch_component(\'#{component_name}\', :#{attr} => option_value) %>" unless value.present?
+        set_attr(attr, value)
+      end
+    end
+
+    def set_attr(attr, value)
+      self.class.__send__(:attr_accessor, attr)
+      instance_variable_set("@#{attr.to_s}", args.is_a?(Hash) ? args[attr] : nil)
     end
 
     def set_nested_components
@@ -78,6 +98,10 @@ class Launch::Component
     end
 
     def optional_attributes
+      []
+    end
+
+    def required_attributes
       []
     end
 
@@ -106,6 +130,10 @@ class Launch::Component
     def default_tag
       # implemented by children
       :div
+    end
+
+    def component_name
+      @component_name ||= self.class.name.sub('Launch::Component::', '').sub('::', '/').downcase
     end
 
 end

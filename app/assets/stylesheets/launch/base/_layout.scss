@@ -1,0 +1,181 @@
+// Variables
+$site-background:              $white-light;
+
+$page-header-background:       $white-base;
+$page-header-border:           1px solid $grey-light;
+$page-header-offset:           50px;
+$page-header-padding:          20px 25px 0;
+
+$page-content-card-background: $white-base;
+$page-content-card-border:     1px solid $grey-light;
+$page-content-card-offset:     -50px;
+$page-content-card-padding:    15px;
+
+
+// Global Styles
+html,
+body {
+  background-color: $site-background;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+
+  &.modal__is-open {
+    @include position(fixed);
+    width: 100%;
+   }
+}
+
+
+// Backgrounds
+.background__white { background-color: $white-base; }
+
+
+// Resets
+.margin-bottom-reset { margin-bottom: 0 }
+.margin-left-reset { margin-left: 0 }
+.margin-right-reset { margin-right: 0 }
+.margin-top-reset { margin-top: 0 }
+
+.padding-bottom-reset { padding-bottom: 0 }
+.padding-left-reset { padding-left: 0 }
+.padding-right-reset { padding-right: 0 }
+.padding-top-reset { padding-top: 0 }
+
+
+// Hide/Show Classes
+.mobile--show {
+  display: block;
+  @include media($tablet){ display: none; }
+}
+
+.mobile--hide {
+  display: none;
+  @include media($tablet){ display: block; }
+}
+
+
+// Divider
+.horizontal-divider {
+  @include rem(margin, 40px auto);
+  border: none;
+  border-bottom: 1px solid $grey-base;
+}
+
+
+// Images
+.full-width-img { width: 100%; }
+
+
+// Page Stucture
+.page--section {
+  @include position(relative);
+  @include rem(margin, 0 auto 50px);
+
+  .page--section__left,
+  .page--section__right {
+    @include span-columns(6 of 12);
+  }
+}
+
+// App Page Stucture
+.page { @include position(relative); }
+
+.page--container {
+  @include outer-container;
+  @include position(relative);
+  @include rem(padding, 0 20px);
+  z-index: 2;
+
+  @include media($desktop) { padding: 0; }
+}
+
+.page--container__padding-clear { padding: 0; }
+
+.page--header {
+  @include rem(padding, $page-header-padding);
+  background-color: $page-header-background;
+  border-bottom: $page-header-border;
+
+  @include media($desktop) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &.offset {
+    @include media($tablet-landscape) {
+      @include rem(padding-bottom, $page-header-offset);
+    }
+  }
+
+  .title{
+    @include font-type($secondary-sans-serif, normal, 200);
+    @include s-bravo;
+    display: inline-block;
+  }
+
+  .page--header__right {
+    @include position(absolute, -8px 0 null null);
+    @include rem(padding-left, 10px);
+    @include rem(width, 100px);
+    background-color: $white-light;
+    border: 1px solid $grey-base;
+
+    @include media($tablet-landscape) {
+      @include position(absolute, -8px 372px null null);
+      @include rem(width, 200px);
+    }
+  }
+}
+
+
+// Main Page Layout
+.page--container-left {
+  @include span-columns(4 of 4);
+
+  @include media($tablet-landscape) {
+    @include span-columns(8 of 12);
+  }
+}
+
+.page--container-right {
+  @include span-columns(4 of 4);
+
+  @include media($tablet-landscape) {
+    @include span-columns(4 of 12);
+    @include omega;
+    float: right;
+  }
+
+}
+
+.page-content-card {
+  @include rem(margin, $page-header-offset 0);
+  @include rem(min-height, 700px);
+  @include rem(padding, $page-content-card-padding);
+  background: $page-content-card-background;
+  border: $page-content-card-border;
+  border-radius: 2px;
+
+  @include media($tablet-landscape) { @include rem(margin-top, $page-content-card-offset); }
+}
+
+.page-content-card--message {
+  @include font-type($primary-sans-serif, normal, 700);
+  @include s-foxtrot;
+  color: $grey-dark;
+  line-height: normal;
+}
+
+.field_with_errors {
+  input {
+    border-color: $red-base !important;
+  }
+}
+
+#ui-datepicker-div { z-index: 0 !important; }
+
+article.documentation-article {
+  @include span-columns(9 of 12);
+}

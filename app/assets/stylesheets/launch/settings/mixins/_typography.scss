@@ -1,7 +1,3 @@
-// Typography Mixin
-// ========================================
-
-
 // Font Sizes
 @mixin s-giga {
   @include rem(font-size, $s-giga);

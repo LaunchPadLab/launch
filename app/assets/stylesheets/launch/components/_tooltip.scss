@@ -1,62 +1,59 @@
-// Tooltip Component
-// ========================================
+// .tooltip-item {
+//   background: $tooltip-background;
+//   border: $tooltip-border-radius;
+//   border-radius: $tooltip-border-radius;
+//   display: inline-block;
+//   position: relative;
+//   text-align: center;
 
-.tooltip-item {
-  background: $tooltip-background;
-  border: $tooltip-border-radius;
-  border-radius: $tooltip-border-radius;
-  display: inline-block;
-  position: relative;
-  text-align: center;
+//   &:focus,
+//   &:hover .tooltip {
+//     cursor: help;
+//     opacity: 1;
+//     visibility: visible;
+//   }
+// }
 
-  &:focus,
-  &:hover .tooltip {
-    cursor: help;
-    opacity: 1;
-    visibility: visible;
-  }
-}
+// .tooltip {
+//   @include box-shadow($tooltip-shadow-spread, $tooltip-shadow-color);
+//   @include rem(margin, $tooltip-margin);
+//   @include rem(width, $tooltip-width);
+//   @include position(absolute, $tooltip-offset);
+//   @include transition (all 0.2s ease-in-out);
+//   background: $tooltip-background;
+//   opacity: 0;
+//   padding: 1em;
+//   text-align: center;
+//   visibility: hidden;
+//   z-index: 10;
 
-.tooltip {
-  @include box-shadow($tooltip-shadow-spread, $tooltip-shadow-color);
-  @include rem(margin, $tooltip-margin);
-  @include rem(width, $tooltip-width);
-  @include position(absolute, $tooltip-offset);
-  @include transition (all 0.2s ease-in-out);
-  background: $tooltip-background;
-  opacity: 0;
-  padding: 1em;
-  text-align: center;
-  visibility: hidden;
-  z-index: 10;
+//   .tooltip--text {
+//     @include s-golf;
+//     margin: 0;
+//   }
 
-  .tooltip--text {
-    @include s-golf;
-    margin: 0;
-  }
+//   &:after {
+//     @include position(absolute, null 0 -20px -15px);
+//     @include text-shadow($tooltip-text-shadow-spread, $tooltip-text-shadow-color);
+//     @include s-foxtrot;
+//     border: 5px solid transparent;
+//     color: $tooltip-background;
+//     content: '▼';
+//     text-align: center;
+//     z-index: -1;
+//   }
+// }
 
-  &:after {
-    @include position(absolute, null 0 -20px -15px);
-    @include text-shadow($tooltip-text-shadow-spread, $tooltip-text-shadow-color);
-    @include s-foxtrot;
-    border: 5px solid transparent;
-    color: $tooltip-background;
-    content: '▼';
-    text-align: center;
-    z-index: -1;
-  }
-}
+// .tooltip--icon {
+//   @include font-type($primary-sans-serif, normal, 700);
+//   @include position(relative, -10px null null 0);
+//   @include rem(height, $tooltip-icon-dimensions);
+//   @include rem(width, $tooltip-icon-dimensions);
+//   @include s-hotel;
+//   border: $tooltip-icon-border;
+//   border-radius: 30em;
+//   color: $tooltip-icon-color;
+//   display: inline-block;
 
-.tooltip--icon {
-  @include font-type($primary-sans-serif, normal, 700);
-  @include position(relative, -10px null null 0);
-  @include rem(height, $tooltip-icon-dimensions);
-  @include rem(width, $tooltip-icon-dimensions);
-  @include s-hotel;
-  border: $tooltip-icon-border;
-  border-radius: 30em;
-  color: $tooltip-icon-color;
-  display: inline-block;
-
-  &:hover { cursor: help; }
-}
+//   &:hover { cursor: help; }
+// }

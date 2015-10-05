@@ -1,6 +1,3 @@
-// Alerts Component
-// ========================================
-
 @each $alert-name, $alert-settings in $alerts {
   $alert-background-color:  map-get($alert-settings, background-color);
   $alert-color:  map-get($alert-settings, color);

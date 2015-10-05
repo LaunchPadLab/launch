@@ -1,6 +1,3 @@
-// Tabs Component
-// ========================================
-
 $tabs-link-font-type: map-deep-get($tabs-settings, link-font-settings, type);
 $tabs-link-font-style: map-deep-get($tabs-settings, link-font-settings, style);
 $tabs-link-font-weight: map-deep-get($tabs-settings, link-font-settings, weight);

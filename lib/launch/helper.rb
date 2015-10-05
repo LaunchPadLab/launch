@@ -1,16 +1,19 @@
 module Launch
   module Helper
 
-    def launch_component(name, args = {})
+    def launch_component(name, args = {}, &block)
       if name.is_a?(Symbol)
         class_name = name.to_s.titleize
       else
-        class_name = name.split("/").map(&:titleize).join("::")
+        class_name = name.split("/").map {|n| n.titleize.sub(" ", "") }.join("::")
       end
-      args.merge(content: yield)
-      raise args.inspect
+      if block_given?
+        args.merge!(content: capture(&block).strip)
+      end
       "Launch::Component::#{class_name}".constantize.new(args).html
     end
+
+    alias_method :launch, :launch_component
 
     def embedded_svg filename, options={}
       path = Rails.application.assets.find_asset(filename).pathname

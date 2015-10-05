@@ -20,4 +20,5 @@ Gem::Specification.new do |s|
   s.add_dependency "bourbon"
   s.add_dependency "refills"
   s.add_dependency "neat"
+  s.add_dependency "pickadate-rails"
 end

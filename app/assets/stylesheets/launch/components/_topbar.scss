@@ -1,7 +1,8 @@
 // $topbar-settings: (
-//   background-color: $white-base,
+//   background-color: $white-dark,
 //   border: 1px solid $grey-light,
-//   height: 120px
+//   height: 70px,
+//   gutter: 20px
 // );
 
 $topbar-gutter: map-get($topbar-settings, gutter);

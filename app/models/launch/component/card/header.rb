@@ -11,7 +11,7 @@ class Launch::Component::Card::Header < Launch::Component
   def html
     return "" unless nested_prioritized_content.present?
     content_tag :header, role: "banner", class: css_class do
-      nested_prioritized_content
+      nested_prioritized_content.html_safe
     end
   end
 

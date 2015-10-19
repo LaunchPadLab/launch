@@ -3,7 +3,7 @@ class Launch::Component::Topbar::Logo < Launch::Component
   def html
     link_to path do
       content_tag :li, class: css_class do
-        content
+        content.html_safe
       end
     end
   end

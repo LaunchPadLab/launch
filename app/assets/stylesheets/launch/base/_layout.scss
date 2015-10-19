@@ -20,6 +20,7 @@ body {
   overflow-x: hidden;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
+  font-size: $font-size-base;
 
   &.modal__is-open {
     @include position(fixed);

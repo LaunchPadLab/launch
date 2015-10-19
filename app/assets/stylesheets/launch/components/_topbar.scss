@@ -5,16 +5,19 @@
 //   gutter: 20px
 // );
 
-$topbar-gutter: map-get($topbar-settings, gutter);
+$topbar-vertical-padding: map-get($topbar-settings, vertical-padding);
+$topbar-horizontal-padding: map-get($topbar-settings, horizontal-padding);
 $topbar-height: map-get($topbar-settings, height);
+$total-topbar-height: calc(($topbar-vertical-padding * 2) + $topbar-height);
 
 .topbar {
-  @include rem(padding, 10% $topbar-gutter);
+  @include rem(padding, $topbar-vertical-padding $topbar-horizontal-padding);
   @include position(relative);
   @include rem(height, $topbar-height);
   background-color: map-get($topbar-settings, background-color);
   z-index: 100;
   text-align: center;
+  border-bottom: map-get($topbar-settings, border-bottom);
 
   @include media($tablet) {
     overflow: hidden;

@@ -9,6 +9,7 @@ body {
   overflow-x: hidden;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  background-color: $grey-light;
 }
 
 h1,
@@ -18,7 +19,7 @@ h4,
 h5,
 h6 {
   @include font-type($primary-sans-serif, normal, 700);
-  @include rem(margin-bottom, 18px);
+  @include rem(margin-bottom, 10px);
   color: $black-base;
   line-height: 1.0;
   text-rendering: optimizeLegibility;

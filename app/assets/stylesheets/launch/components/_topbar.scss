@@ -8,7 +8,7 @@
 $topbar-vertical-padding: map-get($topbar-settings, vertical-padding);
 $topbar-horizontal-padding: map-get($topbar-settings, horizontal-padding);
 $topbar-height: map-get($topbar-settings, height);
-$total-topbar-height: calc(($topbar-vertical-padding * 2) + $topbar-height);
+$total-topbar-height: $topbar-height;
 
 .topbar {
   @include rem(padding, $topbar-vertical-padding $topbar-horizontal-padding);

@@ -11,7 +11,8 @@ $topbar-height: map-get($topbar-settings, height);
 $total-topbar-height: $topbar-height;
 
 .topbar {
-  @include rem(padding, $topbar-vertical-padding $topbar-horizontal-padding);
+  @include rem(padding, 0px $topbar-vertical-padding $topbar-horizontal-padding);
+  line-height: $topbar-height;
   @include position(relative);
   @include rem(height, $topbar-height);
   background-color: map-get($topbar-settings, background-color);
